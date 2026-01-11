@@ -1,18 +1,21 @@
 #include <iostream>
 using namespace std;
 
-int game(){
+int game(int maxNum){
     std::srand(time(0));
     int randNumber;
     int inputNumber;
     int gameStatus=0;
     int gussCount=0;
 
-    randNumber = rand() % 20;
-
+    randNumber = rand() % maxNum;
+    if(randNumber==0){
+        randNumber = 1;
+    }
 
     do{
         //cout << randNumber << endl;
+
         gameStatus=1;
         cout << "Enter Gussed Number: " << endl;
         cin >> inputNumber;
@@ -32,6 +35,6 @@ int game(){
 }
 
 int main(){
-    int count = game();
+    int count = game(40);
     cout << "eli arvauskertojen lukumäärää : " << count << endl;
 }
