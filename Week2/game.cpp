@@ -36,13 +36,18 @@ void Game::play()
             cout << "Your guess is too small" << endl;
         }else{
             gameStatus = 0;
-            cout << "Your quest is right ="<< randomNumber << endl;
-            cout << "You quesed the right answer = "<< playerGuess << " with "<<numberOfGuesses<<" quesses"<<endl;
+            printGameResult();
         }
     }while(gameStatus==1);
 
 
 
+}
+
+void Game::printGameResult()
+{
+    cout << "Your quest is right ="<< randomNumber << endl;
+    cout << "You quesed the right answer = "<< playerGuess << " with "<<numberOfGuesses<<" quesses"<<endl;
 }
 
 
