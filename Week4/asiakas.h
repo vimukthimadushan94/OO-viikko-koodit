@@ -15,6 +15,7 @@ public:
     bool nosto(double);
     bool luotonMaksu(double);
     bool luotonNosto(double);
+    bool tiliSiirto(double,Asiakas &);
 
 private:
     string nimi;

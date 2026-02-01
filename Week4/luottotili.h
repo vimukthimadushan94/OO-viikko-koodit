@@ -8,6 +8,7 @@ class Luottotili: public Pankkitili
 {
 public:
     Luottotili(string,double);
+    double getBalance() override;
     bool deposit(double) override;
     bool withdraw(double) override;
 

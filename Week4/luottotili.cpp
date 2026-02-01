@@ -7,10 +7,15 @@ Luottotili::Luottotili(string nimi, double raja): Pankkitili(nimi)
     cout<<"making luottotili in "<<omistaja<<" with "<<luottoRaja<<endl;
 }
 
+double Luottotili::getBalance()
+{
+    return luottoRaja;
+}
+
 bool Luottotili::deposit(double amount)
 {
-    if (amount > 0 && saldo - amount >= 0) {
-        saldo -= amount;
+    if (amount > 0 && luottoRaja >= 0) {
+        luottoRaja = luottoRaja+amount;
         return true;
     }
     return false;
@@ -18,8 +23,8 @@ bool Luottotili::deposit(double amount)
 
 bool Luottotili::withdraw(double amount)
 {
-    if (amount > 0 && saldo + amount <= luottoRaja) {
-        saldo += amount;
+    if (amount > 0 && luottoRaja <= luottoRaja) {
+        luottoRaja =luottoRaja- amount;
         return true;
     }
     return false;

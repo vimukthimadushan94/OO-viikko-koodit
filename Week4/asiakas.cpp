@@ -37,3 +37,14 @@ bool Asiakas::luotonNosto(double amount)
 {
     return luottotili->withdraw(amount);
 }
+
+bool Asiakas::tiliSiirto(double amount, Asiakas &asiakas)
+{
+    if(amount<=kayttotili->getBalance()){
+        nosto(amount);
+        asiakas.talletus(amount);
+        return true;
+    }else{
+        return false;
+    }
+}
