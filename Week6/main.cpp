@@ -76,21 +76,22 @@ int main ()
 
             cout<<"Student to be found name= ?"<<endl;
             cin>>givenName;
+
             // Etsi studentListan opiskelijoista algoritmikirjaston
-            // find_if funktion avulla löytyykö käyttäjän antamaa nimeä
             auto it = find_if(studentList.begin(),studentList.end(),[givenName](Student &sd){
                 return sd.getName()==givenName;
             });
-
+            // find_if funktion avulla löytyykö käyttäjän antamaa nimeä
             if (it != studentList.end())
             {
+                // listalta. Jos löytyy, niin tulosta opiskelijan tiedot.
                 it->printStudentInfo();
             }
             else
             {
                 cout << "Student not found." << endl;
             }
-            // listalta. Jos löytyy, niin tulosta opiskelijan tiedot.
+
             break;
         }
         default:
